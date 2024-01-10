@@ -18,7 +18,7 @@ const forma = document["forma"];
 /** @type {HTMLImageElement} */
 const avatar = document.querySelector("#avatar");
 
-/* Escucha cambios de usuario.
+/* Escucha cambios de usuario. 
  * El primer parámetro es una
  * función que se invoca cada que
  * hay un cambio de usuario y
