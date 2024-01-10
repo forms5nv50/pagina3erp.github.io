@@ -109,3 +109,16 @@ function loginWithGoogle() {
     const credential = error.credential;
   });
 }
+
+function loginFacebook() {
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        var user = result.user;
+        updateUser(user, true);
+    }).catch(function(error) {
+        console.error(error);
+    });
+}
+
+document.getElementById('signInButtonG').addEventListener('click', loginWithGoogle);
+document.getElementById('signInButtonFb').addEventListener('click', loginWithGoogle);
