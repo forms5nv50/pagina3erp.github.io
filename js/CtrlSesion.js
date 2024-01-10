@@ -47,7 +47,7 @@ function loginWithGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
         var user = result.user;
-        updateUser(user, true);
+        updateUser(user);
     }).catch(function(error) {
         console.error(error);
     });
@@ -69,9 +69,11 @@ async function
     }
     forma.email.value =
       usuario.email || "";
-    var userNameH1 = document.getElementById('user_name');
-    userNameH1.innerHTML = 'Hola, ' + user.displayName;
-
+    loginWithGoogle();
+    function updateUser(user){
+      var userNameH1 = document.getElementById('user_name');
+      userNameH1.innerHTML = 'Hola, ' + user.displayName;
+    }
     
     avatar.src =
       usuario.photoURL || "";
