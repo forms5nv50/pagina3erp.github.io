@@ -15,7 +15,7 @@ import {
 
 const daoAlumno =
   getFirestore().
-    collection("Herramientas Apple");
+    collection("HerramientasApple");
 const params =
   new URL(location.href).
     searchParams;
