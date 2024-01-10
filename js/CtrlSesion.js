@@ -80,8 +80,23 @@ firebase.auth().getRedirectResult().then(function(result) {
 
 forma.terminarSesión.addEventListener("click", () => {
   firebase.auth().signOut().then(() => {
+    // Eliminar las cookies sólo si las estás utilizando.
+    if (document.cookie) {
+      const cookies = document.cookie.split(";");
+
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const equalsPos = cookie.indexOf("=");
+        const name = equalsPos > -1 ? cookie.substr(0, equalsPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      }
+    }
+
     // Actualiza la interfaz de usuario para un usuario desconectado.
     muestraSesión(null);
+
+    // Recargar la página.
+    location.reload();
   }).catch((error) => {
     // Ha ocurrido un error, haz algo aquí.
     console.error(error);
