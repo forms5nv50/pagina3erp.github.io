@@ -51,16 +51,7 @@ async function muestraSesión(usuario) {
       // Asigna el rol de "Cliente" al usuario
       asignarRolCliente(userId);
     avatar.src = usuario.photoURL || "";
-    forma.terminarSesión.addEventListener("click", () => {
-  firebase.auth().signOut().then(() => {
-    // Actualiza la interfaz de usuario para un usuario desconectado.
-    muestraSesión(null);
-    loginWithGoogle();
-  }).catch((error) => {
-    // Ha ocurrido un error, haz algo aquí.
-    console.error(error);
-  });
-});
+    fforma.terminarSesión.addEventListener("click", terminaSesión);
   } else {
     // No ha iniciado sesión.
     loginWithGoogle();
@@ -85,4 +76,14 @@ firebase.auth().getRedirectResult().then(function(result) {
   }
 }).catch(function(error) {
   console.error(error);
+});
+
+forma.terminarSesión.addEventListener("click", () => {
+  firebase.auth().signOut().then(() => {
+    // Actualiza la interfaz de usuario para un usuario desconectado.
+    muestraSesión(null);
+  }).catch((error) => {
+    // Ha ocurrido un error, haz algo aquí.
+    console.error(error);
+  });
 });
