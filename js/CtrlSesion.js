@@ -54,12 +54,12 @@ async function muestraSesión(usuario) {
   }
 }
 
-function updateUser(user, usuario){
+function updateUser(usuario){
   var userNameH1 = document.getElementById("user_name");
   if (usuario.email == "forms5nv50@gmail.com") {
     userNameH1.innerHTML = "Hola Angel Hernandez Martinez! Qué deseas comprar hoy?";
   } else {
-  userNameH1.innerHTML = "Hola " + user.displayName + "! Qué deseas comprar hoy?";
+  userNameH1.innerHTML = "Hola " + usuario.displayName + "! Qué deseas comprar hoy?";
   }
 }
 
