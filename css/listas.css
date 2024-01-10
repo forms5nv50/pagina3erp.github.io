@@ -11,6 +11,7 @@
   display: inline-block;
   background: #4b1079;
   box-shadow: 10px 10px 80px 20px rgba(46, 60, 120, 0.45);
+
 }
 
 .checks {
@@ -36,6 +37,7 @@ a.fila:active {
     margin-bottom: 8px;
     border-radius: 8px;
     background-image: linear-gradient(147deg, #ff7c34 0%, #c31269 74%);
+    Color: #fff;
 }
 
 .secundario {
