@@ -1,0 +1,148 @@
+      @import "mi-nav.css";
+      @import "mi-footer.css";
+      @import "listas.css";
+
+      :root {
+        font-family: sans-serif;
+        --col-active: #4646462c;
+        --color-header: white;
+        --colorMiNav: white;
+      }
+
+      body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #fa9b48 100%);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+      form {
+  background: white;
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: auto;
+}
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: .5em;
+      }
+
+      figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      figure img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      figure p {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+      }
+
+      .herramientas,
+      .herramientas button {
+        width: 100%;
+        margin-top: 1em;
+      }
+
+      .herramientas button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.5s;
+      }
+
+      .herramientas button:hover {
+        background-color: #45a049;
+      }
+
+      .mi-footer {
+        margin-top: 1em;
+        text-align: center;
+        font-size: 14px;
+        color: #888;
+      }
+
+      header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background-image: linear-gradient(-225deg, #231557 -12%, #44107A 33%, #FF1361 85%, #fa9b48 200%);
+          var(--color-header);
+      }
+
+      .herramientas {
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        align-content: flex-end;
+        justify-content: flex-end;
+        margin-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        gap: 0.5rem;
+      }
+
+      header input {
+        flex-grow: 1;
+      }
+
+      h1 {
+        margin: 0.5rem 0;
+      }
+
+      figure img {
+        max-width: 100%;
+      }
+
+      legend,
+      p label {
+        display: block;
+        font-weight: bold;
+        font-size: 0.7rem;
+      }
+
+      p label>* {
+        display: block;
+        font-weight: normal;
+        font-size: 1rem;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      ..div-cuerpo {
+  text-align: center;
+  margin-top: 20px;
+}
+
+      .div-cuerpo a {
+        padding: 20px 40px;
+        background-color: #4CAF50; /* puedes cambiar el color a tu preferencia */
+        color: white; /* color del texto */
+        text-decoration: none; /* elimina el subrayado del enlace */
+        font-size: 20px;
+        border-radius: 8px; /* da bordes redondeados al botón */
+        transition: background-color 0.3s; /* animacion al pasar el cursor */
+      }
+
+      .div-cuerpo a:hover {
+        background-color: #45a049; /* color cuando pasas el cursor sobre el boton */
+      }
