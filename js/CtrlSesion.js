@@ -42,6 +42,17 @@ getAuth().onAuthStateChanged(
  *    características del usuario
  *    o null si no ha iniciado
  *    sesión. */
+
+function loginWithGoogle() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        var user = result.user;
+        updateUser(user, true);
+    }).catch(function(error) {
+        console.error(error);
+    });
+}
+
 async function
   muestraSesión(usuario) {
   if (usuario && usuario.email) {
