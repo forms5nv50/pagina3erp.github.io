@@ -60,3 +60,23 @@ p label>* {
   box-sizing: border-box;
   width: 100%;
 }
+.div-cuerpo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* vh significa viewport height, que es el alto de la ventana del navegador */
+}
+
+.div-cuerpo a {
+  padding: 20px 40px;
+  background-color: #4CAF50; /* puedes cambiar el color a tu preferencia */
+  color: white; /* color del texto */
+  text-decoration: none; /* elimina el subrayado del enlace */
+  font-size: 20px;
+  border-radius: 8px; /* da bordes redondeados al botón */
+  transition: background-color 0.3s; /* animacion al pasar el cursor */
+}
+
+.div-cuerpo a:hover {
+  background-color: #45a049; /* color cuando pasas el cursor sobre el boton */
+}
