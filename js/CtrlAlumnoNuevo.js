@@ -14,21 +14,7 @@ import {
 } from "./seguridad.js";
 
 const db = getFirestore();
-/** @type {HTMLFormElement} */
-const forma = document.getElementById("forma");
-getAuth().onAuthStateChanged(
-  protege, muestraError);
 
-/** @param {import(
-    "../lib/tiposFire.js").User}
-    usuario */
-async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Administrador"])) {
-    forma.addEventListener(
-      "submit", guardar);
-  }
-}
 
 /** @param {Event} evt */
 async function guardar(){
