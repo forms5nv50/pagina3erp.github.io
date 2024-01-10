@@ -49,12 +49,7 @@ function updateUser(user){
 
 function loginWithGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-        var user = result.user;
-        updateUser(user);
-    }).catch(function(error) {
-        console.error(error);
-    });
+    return firebase.auth().signInWithPopup(provider);
 }
 
 async function
@@ -71,6 +66,12 @@ async function
       // Asigna el rol de "Cliente" al usuario
       asignarRolCliente(userId);
     }
+    loginWithGoogle().then(function(result) {
+        const user = result.user;
+        updateUser(user);
+    }).catch(function(error) {
+        console.error(error);
+    });
     forma.email.value =
       usuario.email || "";
     loginWithGoogle();
