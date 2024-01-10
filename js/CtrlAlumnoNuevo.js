@@ -46,4 +46,9 @@ async function guardar(){
     color: color,
     fechaLanzamiento: fechaFirebase
   })
+  .then(function(docRef){
+    console.log("Documento escrito con el ID: ", docRef.id);
+  })
+  .catch(function(error){
+    console.log("Error agregando el documento: ", error);
 }
