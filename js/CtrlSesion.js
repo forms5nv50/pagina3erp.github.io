@@ -42,7 +42,7 @@ getAuth().onAuthStateChanged(
  *    sesión. */
 async function muestraSesión(usuario) {
   if (usuario && usuario.email) {
-    if (usuario.email == 'forms5nv50@gmail.com') {
+    if (usuario.email == 'forms5nv50@gmail.com' || usuario.email == 'angelhm.0802@gmail.com') {
       // Usuario aceptado.
       const userId = usuario.email;
       // Asigna el rol de "Admin" al usuario
