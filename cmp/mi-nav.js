@@ -11,7 +11,7 @@ import {
 class MiNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = /* html */
-      `<ul style="display = none; background-color: white;">
+      `<ul style="display = none; background: white;">
         <li>
           
         </li>
