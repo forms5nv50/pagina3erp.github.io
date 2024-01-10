@@ -63,7 +63,7 @@ function updateUser(usuario){
   }
 }
 
-function loginWithGoogle() {
+/* function loginWithGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then(result => {
@@ -84,7 +84,7 @@ function loginWithGoogle() {
     // El tipo firebase.auth.AuthCredential que fue utilizado.
     const credential = error.credential;
   });
-}
+} */
 
 function loginWithGoogle() {
   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
@@ -121,4 +121,4 @@ function loginFacebook() {
 }
 
 document.getElementById('signInButtonG').addEventListener('click', loginWithGoogle);
-document.getElementById('signInButtonFb').addEventListener('click', loginWithGoogle);
+document.getElementById('signInButtonFb').addEventListener('click', loginFacebook);
