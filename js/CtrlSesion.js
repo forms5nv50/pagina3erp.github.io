@@ -64,19 +64,27 @@ function updateUser(usuario){
 }
 
 function loginWithGoogle() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithRedirect(provider);
-}
+  const provider = new firebase.auth.GoogleAuthProvider();
 
-// Maneja el resultado del inicio de sesión
-firebase.auth().getRedirectResult().then(function(result) {
-  if (result.user) {
+  firebase.auth().signInWithPopup(provider).then(result => {
+    // Esto te permite acceder al token de acceso directamente si necesitas.
+    const token = result.credential.accessToken;
+
+    // El usuario está autenticado, puedes acceder a los datos del usuario.
+    const usuario = result.user;
     // Actualiza los detalles del usuario aquí
-    updateUser(result.user);
-  }
-}).catch(function(error) {
-  console.error(error);
-});
+    updateUser(usuario)
+
+  }).catch((error) => {
+    // Maneja los errores aquí.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // El correo electrónico de la cuenta del usuario utilizado.
+    const email = error.email;
+    // El tipo firebase.auth.AuthCredential que fue utilizado.
+    const credential = error.credential;
+  });
+}
 
 forma.terminarSesión.addEventListener("click", () => {
   firebase.auth().signOut().then(() => {
