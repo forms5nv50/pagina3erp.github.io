@@ -2,10 +2,14 @@
 .checks {
   list-style-type: none;
   padding: 0;
+ 
 }
 
 .lista {
-  margin: 1rem 0;
+  margin: 8%;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 10px 10px 80px 20px rgba(46, 60, 120, 0.45);
 }
 
 .checks {
