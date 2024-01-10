@@ -71,6 +71,7 @@ async function
       usuario.email || "";
     var userNameH1 = document.getElementById('user_name');
     userNameH1.innerHTML = 'Hola, ' + user.displayName;
+
     
     avatar.src =
       usuario.photoURL || "";
