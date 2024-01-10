@@ -12,7 +12,7 @@
 body {
         background-color: #f6f6f6;
           font-family: Arial, sans-serif;
-          height: 100vh;  // Añadimos esto para que el cuerpo abarque todo el espacio de la página
+          height: 100vh; 
           display: flex;
           justify-content: center;
           align-items: center;
