@@ -69,11 +69,11 @@ function updateUser(user){
 
 function loginWithGoogle() {
   var provider = new firebase.auth.GoogleAuthProvider();
-  return firebase.auth().signInWithRedirect(provider);
+  return firebase.auth().signInWithPopup(provider);
 }
 
 // Maneja el resultado del inicio de sesión
-firebase.auth().getRedirectResult().then(function(result) {
+firebase.auth().signInWithPopup().then(function(result) {
     if (result.user) {
         // Actualiza los detalles del usuario aquí
         updateUser(result.user);
