@@ -1,17 +1,17 @@
 import {
   getAuth
-} from "../lib/fabrica.js";;
+} from "../lib/fabrica.js";
 import {
   muestraError
-} from "../lib/util.js";;
+} from "../lib/util.js";
 import {
   iniciaSesión,
   terminaSesión
-} from "./seguridad.js";;
+} from "./seguridad.js";
 import { 
   asignarRolCliente,
   asignarRolAdmin
-} from "./asignarRolCliente.js";;
+} from "./asignarRolCliente.js";
 
 /** @type {HTMLFormElement} */
 const forma = document["forma"];
