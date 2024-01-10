@@ -10,20 +10,22 @@
 }
 
 body {
-        background-color: #f6f6f6;
-          font-family: Arial, sans-serif;
-          height: 100vh; 
-          display: flex;
-          justify-content: center;
-          align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: #f6f6f6;
+  font-family: Arial, sans-serif;
 }
 
 form {
-  height: 100vh;
   background: white;
   max-width: 500px;
-  margin: 2em auto;
-  padding: 1em;
+  padding: 20px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
@@ -129,6 +131,7 @@ p label>* {
   width: 100%;
 }
 .div-cuerpo {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
