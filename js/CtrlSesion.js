@@ -109,3 +109,4 @@ function loginWithGoogle() {
     const credential = error.credential;
   });
 }
+loginWithGoogle();
