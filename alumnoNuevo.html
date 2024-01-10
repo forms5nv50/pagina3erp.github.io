@@ -26,17 +26,58 @@
     href="css/estilos.css">
 </head>
 <body>
-  <form id="forma" class="formularioAgregar">
-      <input type="text" id="nombre" placeholder="nombre" class="">
-      <input type="text" id="precio" placeholder="precio" class="">
-      <input type="text" id="descripcion" placeholder="descripcion" class="">
-      <input type="text" id="color" placeholder="color" class="">
-      <input type="date" id="fechaLanzamiento" required>
-      <button class="" id="botoncito">Guardar</button>
-    </form>
+  <form name="forma">
+    <mi-nav></mi-nav>
+    <header>
+      <h1>Alumno Nuevo</h1>
+      <div class="herramientas">
+        <a
+          href="alumnos.html">
+          Cancelar</a>
+        <button type="submit">
+          Guardar
+        </button>
+      </div>
+    </header>
+    <p>
+      <label>
+        Nombre
+        <input name="matricula"
+          type="text" required>
+      </label>
+    </p>
+    <p>
+      <label>
+        Precio
+        <input name="nombre"
+          type="text" required>
+      </label>
+    </p>
+    <p>
+      <label>
+        Descripcion
+        <input name="telefono"
+          type="text" required>
+      </label>
+    </p>
+    <p>
+      <label>
+        Color
+        <input name="grupo"
+          type="text" required>
+      </label>
+    </p>
+    <p>
+      <label>
+        Fecha de lanzamiento
+        <input name="fecha"
+          type="date" required>
+      </label>
+    </p>
+    <mi-footer></mi-footer>
+  </form>
   <script type="module"
     src="js/CtrlAlumnoNuevo.js">
     </script>
 </body>
 </html>
-
