@@ -26,7 +26,7 @@ export async function tieneRol(usuario, roles) {
       }
     }
     alert("No autorizado.");
-    location.href = "../index.html"; // Asegúrate de actualizar esta línea con la URL real de tu página de inicio de sesión
+    location.href = "index.html"; // Asegúrate de actualizar esta línea con la URL real de tu página de inicio de sesión
   } else {
     iniciaSesión();
   }
