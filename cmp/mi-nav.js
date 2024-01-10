@@ -13,8 +13,7 @@ class MiNav extends HTMLElement {
     this.innerHTML = /* html */
       `<ul style="display = none;">
         <li>
-          <a href="index.html">
-            Sesión</a>
+          
         </li>
       </ul>`;
     this.ul =
@@ -38,8 +37,7 @@ class MiNav extends HTMLElement {
      if (roles.has("Cliente")) {
         html += /* html */
           `<li>
-            <a href=
-              "alumnos.html">Inventario</a>
+            
           </li>`;
       }
       this.ul.innerHTML += html;
