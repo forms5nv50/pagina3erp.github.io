@@ -15,7 +15,7 @@ const lista = document.
   querySelector("#lista");
 const daoAlumno =
   getFirestore().
-    collection("Alumno");
+    collection("HerramientasApple");
 
 getAuth().
   onAuthStateChanged(
@@ -26,7 +26,7 @@ getAuth().
     usuario */
 async function protege(usuario) {
   if (tieneRol(usuario,
-    ["Administrador"])) {
+    ["Cliente"])) {
     consulta();
   }
 }
