@@ -28,7 +28,8 @@ const avatar = document.querySelector("#avatar");
 * presenta un error en un cambio
 * de usuario y recibe un Error.
 */
-document.getElementById('signInButtonG').addEventListener('click', loginWithGoogle);
+getAuth().onAuthStateChanged(
+muestraSesión, muestraError);
 
 /** Muestra los datos del usuario
 * o manda a iniciar sesión en
@@ -84,10 +85,5 @@ muestraSesión(null);
 }).catch((error) => {
 // Ha ocurrido un error, haz algo aquí.
 console.error(error);
-
-  // Asegúrate de que el DOM esté cargado antes de agregar el controlador de eventos
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('signInButtonG').addEventListener('click', loginWithGoogle);
-});
 });
 });
