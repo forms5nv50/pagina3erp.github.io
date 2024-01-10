@@ -58,8 +58,8 @@ async function
     }
     forma.email.value =
       usuario.email || "";
-    forma.nombre.value =
-      usuario.displayName || "";
+    var userNameH1 = document.getElementById('user_name');
+    userNameH1.innerHTML = 'Hola, ' + user.displayName;
     avatar.src =
       usuario.photoURL || "";
     forma.terminarSesión.
