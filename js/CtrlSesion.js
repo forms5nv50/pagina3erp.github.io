@@ -28,8 +28,7 @@ const avatar = document.querySelector("#avatar");
 * presenta un error en un cambio
 * de usuario y recibe un Error.
 */
-getAuth().onAuthStateChanged(
-muestraSesión, muestraError);
+document.getElementById('signInButtonG').addEventListener('click', loginWithGoogle);
 
 /** Muestra los datos del usuario
 * o manda a iniciar sesión en
