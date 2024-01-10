@@ -15,7 +15,7 @@ import {
 
 const db = getFirestore();
 /** @type {HTMLFormElement} */
-const forma = document["forma"];
+const forma = document.getElementById("forma");
 getAuth().onAuthStateChanged(
   protege, muestraError);
 
