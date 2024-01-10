@@ -10,15 +10,20 @@
 }
 
 body {
-  background-color: #f6f6f6;
-  font-family: Arial, sans-serif;
+        background-color: #f6f6f6;
+          font-family: Arial, sans-serif;
+          height: 100vh;  // Añadimos esto para que el cuerpo abarque todo el espacio de la página
+          display: flex;
+          justify-content: center;
+          align-items: center;
 }
 
 form {
+  height: 100vh;
   background: white;
   max-width: 500px;
   margin: 2em auto;
-  padding: 2em;
+  padding: 1em;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
@@ -26,12 +31,34 @@ form {
 h1 {
   text-align: center;
   color: #333;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
 }
 
-.herramientas {
+figure {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+figure img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+figure p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.herramientas,
+.herramientas button {
+  width: 100%;
+  margin-top: 1em;
 }
 
 .herramientas button {
@@ -49,28 +76,8 @@ h1 {
   background-color: #45a049;
 }
 
-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-figure img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-figure p {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
 .mi-footer {
-  margin-top: 2em;
+  margin-top: 1em;
   text-align: center;
   font-size: 14px;
   color: #888;
