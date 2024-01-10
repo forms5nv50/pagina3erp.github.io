@@ -51,4 +51,5 @@ async function guardar(){
   })
   .catch(function(error){
     console.log("Error agregando el documento: ", error);
+  })
 }
