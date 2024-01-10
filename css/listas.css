@@ -21,6 +21,7 @@
 .fila {
   display: block;
   padding: 1rem;
+  color: #fff;
 }
 
 a.fila:active {
