@@ -84,5 +84,10 @@ muestraSesión(null);
 }).catch((error) => {
 // Ha ocurrido un error, haz algo aquí.
 console.error(error);
+
+  // Asegúrate de que el DOM esté cargado antes de agregar el controlador de eventos
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('signInButtonG').addEventListener('click', loginWithGoogle);
+});
 });
 });
