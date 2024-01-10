@@ -50,7 +50,7 @@ async function muestraSesión(usuario) {
     avatar.src = usuario.photoURL || "";
     forma.terminarSesión.addEventListener("click", terminaSesión);
   } else {
-    loginWithGoogle();
+    iniciaSesión();
   }
 }
 
