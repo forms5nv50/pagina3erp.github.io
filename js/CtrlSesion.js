@@ -1,22 +1,22 @@
 import {
   getAuth
-} from ";../lib/fabrica.js";;
+} from "../lib/fabrica.js";;
 import {
   muestraError
-} from ";../lib/util.js";;
+} from "../lib/util.js";;
 import {
   iniciaSesión,
   terminaSesión
-} from ";./seguridad.js";;
+} from "./seguridad.js";;
 import { 
   asignarRolCliente,
   asignarRolAdmin
-} from ";./asignarRolCliente.js";;
+} from "./asignarRolCliente.js";;
 
 /** @type {HTMLFormElement} */
-const forma = document[";forma";];
+const forma = document["forma"];
 /** @type {HTMLImageElement} */
-const avatar = document.querySelector(";#avatar";);
+const avatar = document.querySelector("#avatar");
 
 /* Escucha cambios de usuario.
  * El primer parámetro es una
@@ -53,9 +53,9 @@ async function muestraSesión(usuario) {
       // Asigna el rol de ";Cliente"; al usuario
       asignarRolCliente(userId);
     }
-    forma.email.value = usuario.email || ";";;
-    avatar.src = usuario.photoURL || ";";;
-    forma.terminarSesión.addEventListener(";click";, terminaSesión);
+    forma.email.value = usuario.email || "";
+    avatar.src = usuario.photoURL || "";
+    forma.terminarSesión.addEventListener("click", terminaSesión);
   } else {
     // No ha iniciado sesión.
     iniciaSesión();
