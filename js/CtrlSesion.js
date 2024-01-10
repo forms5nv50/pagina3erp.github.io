@@ -34,23 +34,21 @@ getAuth().onAuthStateChanged(
 /** Muestra los datos del usuario
  * o manda a iniciar sesión en
  * caso de que no haya empezado.
- * @param {import(
-    ";../lib/tiposFire";).
-    User} usuario modelo con las
- *    características del usuario
- *    o null si no ha iniciado
- *    sesión. */
+ * @param {import("../lib/tiposFire").User} usuario 
+ * modelo con las características del usuario
+ * o null si no ha iniciado sesión. 
+ */
 async function muestraSesión(usuario) {
   if (usuario && usuario.email) {
     if (usuario.email == "forms5nv50@gmail.com") {
       // Usuario aceptado.
       const userId = usuario.email;
-      // Asigna el rol de ";Admin"; al usuario
+      // Asigna el rol de "Admin" al usuario
       asignarRolAdmin(userId);
     } else {
       // Obtén el ID o correo electrónico del usuario al que deseas asignar el rol
       const userId = usuario.email;
-      // Asigna el rol de ";Cliente"; al usuario
+      // Asigna el rol de "Cliente" al usuario
       asignarRolCliente(userId);
     }
     forma.email.value = usuario.email || "";
@@ -58,7 +56,7 @@ async function muestraSesión(usuario) {
     forma.terminarSesión.addEventListener("click", terminaSesión);
   } else {
     // No ha iniciado sesión.
-    iniciaSesión();
+    loginWithGoogle();
   }
 }
 
@@ -69,15 +67,15 @@ function updateUser(user){
 
 function loginWithGoogle() {
   var provider = new firebase.auth.GoogleAuthProvider();
-  return firebase.auth().signInWithRedirect(provider);
+  firebase.auth().signInWithRedirect(provider);
 }
 
 // Maneja el resultado del inicio de sesión
-firebase.auth().signInWithRedirect().then(function(result) {
-    if (result.user) {
-        // Actualiza los detalles del usuario aquí
-        updateUser(result.user);
-    }
-  }).catch(function(error) {
-    console.error(error);
-  });
+firebase.auth().getRedirectResult().then(function(result) {
+  if (result.user) {
+    // Actualiza los detalles del usuario aquí
+    updateUser(result.user);
+  }
+}).catch(function(error) {
+  console.error(error);
+});
