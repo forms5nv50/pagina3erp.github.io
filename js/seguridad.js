@@ -52,13 +52,11 @@ export async function
 
 export async function
   terminaSesión() {
-  firebase.auth().signOut().then(() => {
-    // Actualiza la interfaz de usuario para un usuario desconectado.
-    muestraSesión(null);
-  }).catch((error) => {
-    // Ha ocurrido un error, haz algo aquí.
-    console.error(error);
-  });
+  try {
+    await getAuth().signOut();
+  } catch (e) {
+    muestraError(e);
+  }
 }
 
 /** @param {string} email
