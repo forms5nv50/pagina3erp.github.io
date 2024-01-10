@@ -86,27 +86,26 @@ function loginWithGoogle() {
   });
 }
 
-forma.terminarSesión.addEventListener("click", () => {
-  firebase.auth().signOut().then(() => {
-    // Eliminar las cookies sólo si las estás utilizando.
-    if (document.cookie) {
-      const cookies = document.cookie.split(";");
-
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i];
-        const equalsPos = cookie.indexOf("=");
-        const name = equalsPos > -1 ? cookie.substr(0, equalsPos) : cookie;
-        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-      }
-    }
-
-    // Actualiza la interfaz de usuario para un usuario desconectado.
-    muestraSesión(null);
-
-    // Recargar la página.
-    location.reload();
-  }).catch((error) => {
-    // Ha ocurrido un error, haz algo aquí.
-    console.error(error);
+function loginWithGoogle() {
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(() => {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    return firebase.auth().signInWithPopup(provider);
+  })
+  .then(result => {
+    // Aquí puedes acceder al token de acceso directamente si es necesario.
+    var token = result.credential.accessToken;
+  
+    // El usuario está autenticado, puedes acceder a la información del usuario.
+    const usuario = result.user;
+    // Actualiza los detalles del usuario aquí
+    updateUser(usuario)
+  })
+  .catch((error) => {
+    // Aquí manejas los errores.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    const email = error.email;
+    const credential = error.credential;
   });
-});
+}
