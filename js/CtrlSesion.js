@@ -50,8 +50,6 @@ async function muestraSesión(usuario) {
       const userId = usuario.email;
       // Asigna el rol de "Cliente" al usuario
       asignarRolCliente(userId);
-    }
-    forma.email.value = usuario.email || "";
     avatar.src = usuario.photoURL || "";
     forma.terminarSesión.addEventListener("click", () => {
   firebase.auth().signOut().then(() => {
@@ -71,7 +69,7 @@ async function muestraSesión(usuario) {
 
 function updateUser(user){
   var userNameH1 = document.getElementById("user_name");
-  userNameH1.innerHTML = "Hola, " + user.displayName;
+  userNameH1.innerHTML = "Hola " + user.displayName + "! Qué deseas comprar hoy?";
 }
 
 function loginWithGoogle() {
