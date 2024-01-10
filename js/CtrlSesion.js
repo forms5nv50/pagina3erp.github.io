@@ -35,49 +35,48 @@ getAuth().onAuthStateChanged(
  * o manda a iniciar sesión en
  * caso de que no haya empezado.
  * @param {import(
-    ";../lib/tiposFire";).
+    "../lib/tiposFire").
     User} usuario modelo con las
  *    características del usuario
  *    o null si no ha iniciado
  *    sesión. */
 async function muestraSesión(usuario) {
   if (usuario && usuario.email) {
-    if (usuario.email == "forms5nv50@gmail.com") {
+    if (usuario.email == 'forms5nv50@gmail.com') {
       // Usuario aceptado.
       const userId = usuario.email;
-      // Asigna el rol de ";Admin"; al usuario
+      // Asigna el rol de "Admin" al usuario
       asignarRolAdmin(userId);
     } else {
       // Obtén el ID o correo electrónico del usuario al que deseas asignar el rol
       const userId = usuario.email;
-      // Asigna el rol de ";Cliente"; al usuario
+      // Asigna el rol de "Cliente" al usuario
       asignarRolCliente(userId);
     }
     forma.email.value = usuario.email || "";
     avatar.src = usuario.photoURL || "";
     forma.terminarSesión.addEventListener("click", terminaSesión);
+    updateUser(usuario);
   } else {
-    // No ha iniciado sesión.
-    iniciaSesión();
+    // Si ningún usuario ha iniciado sesión 
+    loginWithGoogle().then(result => {
+      //Aquí manejas el resultado del inicio de sesión.
+      //Esta parte se ejecuta después de que el popup de Google se cierre.
+      console.log(result.user);
+      // Actualiza el perfil del usuario aquí
+      updateUser(result.user);
+    }).catch(err => {
+      console.error(err);
+    });
   }
 }
 
-function updateUser(user){
-  var userNameH1 = document.getElementById("user_name");
-  userNameH1.innerHTML = "Hola, " + user.displayName;
+function updateUser(user) {
+  var userNameH1 = document.getElementById('user_name');
+  userNameH1.innerHTML = 'Hola, ' + user.displayName;
 }
 
 function loginWithGoogle() {
   var provider = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 }
-
-// Maneja el resultado del inicio de sesión
-firebase.auth().signInWithPopup().then(function(result) {
-    if (result.user) {
-        // Actualiza los detalles del usuario aquí
-        updateUser(result.user);
-    }
-  }).catch(function(error) {
-    console.error(error);
-  });
