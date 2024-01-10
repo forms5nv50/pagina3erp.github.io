@@ -42,6 +42,10 @@ getAuth().onAuthStateChanged(
  *    características del usuario
  *    o null si no ha iniciado
  *    sesión. */
+function updateUser(user){
+      var userNameH1 = document.getElementById('user_name');
+      userNameH1.innerHTML = 'Hola, ' + user.displayName;
+    }
 
 function loginWithGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -70,11 +74,6 @@ async function
     forma.email.value =
       usuario.email || "";
     loginWithGoogle();
-    function updateUser(user){
-      var userNameH1 = document.getElementById('user_name');
-      userNameH1.innerHTML = 'Hola, ' + user.displayName;
-    }
-    
     avatar.src =
       usuario.photoURL || "";
     forma.terminarSesión.
