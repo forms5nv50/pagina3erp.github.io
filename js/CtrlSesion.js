@@ -41,19 +41,15 @@ getAuth().onAuthStateChanged(
 async function muestraSesión(usuario) {
   if (usuario && usuario.email) {
     if (usuario.email == "forms5nv50@gmail.com") {
-      // Usuario aceptado.
       const userId = usuario.email;
-      // Asigna el rol de "Admin" al usuario
       asignarRolAdmin(userId);
     } else {
-      // Obtén el ID o correo electrónico del usuario al que deseas asignar el rol
       const userId = usuario.email;
-      // Asigna el rol de "Cliente" al usuario
       asignarRolCliente(userId);
+    }
     avatar.src = usuario.photoURL || "";
-    fforma.terminarSesión.addEventListener("click", terminaSesión);
+    forma.terminarSesión.addEventListener("click", terminaSesión);
   } else {
-    // No ha iniciado sesión.
     loginWithGoogle();
   }
 }
