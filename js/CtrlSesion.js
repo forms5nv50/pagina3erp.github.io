@@ -41,7 +41,7 @@ getAuth().onAuthStateChanged(
  *    o null si no ha iniciado
  *    sesión. */
 async function muestraSesión(usuario) {
-  if (usuario &amp;&amp; usuario.email) {
+  if (usuario && usuario.email) {
     if (usuario.email == "forms5nv50@gmail.com") {
       // Usuario aceptado.
       const userId = usuario.email;
